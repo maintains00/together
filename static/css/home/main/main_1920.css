@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'BMHannaPro';
+}
+
+#wrap {
+    width: 1900px; height: 900px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+
+
+}
+/*------------------------------------------------------------------------------*/
+.box {
+    box-sizing: border-box;
+    width: 40%; height: 100%;
+    border: 30px solid #000;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left_box {
+    box-sizing: border-box;
+    width: 30%; height: 100%;
+}
+
+.right_box {
+    box-sizing: border-box;
+    width: 30%; height: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*------------------------------------------------------------------------------*/
+.main_section {
+    box-sizing: border-box;
+    width: 100%; height: 100%;
+    background-color: #A0CE9B;
+}
+
+.header {
+    box-sizing: border-box;
+    width: 98%; height: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../../../image/kiosk_guide_img/frame_1920.png");
+}
+
+.dis_section {
+    box-sizing: border-box;
+    width: 98%; height: 60%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dis_btn {
+    box-sizing: border-box;
+    width: 100%; height: 20%;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.hex2 {
+    width: 80%;
+    padding-left: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.dis_img {
+    box-sizing: border-box;
+    width: 100%; height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: auto;
+    margin-right: auto; */
+    background-image: url("../../../image/kiosk_guide_img/together.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dis_btn2 {
+    box-sizing: border-box;
+    width: 100%; height: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-right: 5%;
+}
+
+
+
+/* #hex3 {
+    width: 80px;
+    height: 40px;
+    background: #6F9669;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+}
+
+#hex3::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 25px solid #6F9669;
+}
+
+#hex3::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent; 
+    border-top: 25px solid #6F9669;
+} */
+
+.hex4 {
+    width: 80%;
+    padding-right: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.text_section{
+    box-sizing: border-box;
+    width: 98%; height: 10%;
+    background-color: white;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 10px;
+    letter-spacing: 2px; /*단어 사이 간격 조정*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav_section {
+    width: 98%; height: 10%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav1, .nav2{
+    box-sizing: border-box;
+    width: 345.5px; height: 100%;
+    border: 5px solid white;
+    border-radius: 0 0 25px 25px;
+    background-color: #9FCE9D;
+
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    
+}
+.nav1:hover{background-color: #8eba8c;}
+.nav2:hover{background-color: #8eba8c;}
+/* .nav3:hover{background-color: #8eba8c;}
+.nav4:hover{background-color: #8eba8c;} */
+
+.nav2/*, .nav3, .nav4*/{ 
+    margin-left: -5px; 
+}
+
+.footer {
+    box-sizing: border-box;
+    width: 98%; height: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 35px; height: 35px;
+    border: 4px solid #000;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.logo:hover{background-color: #8eba8c;}
+
+/*------------------------------------------------------------------------------*/
+.login{
+    width: 25%; height: 5%;
+    background-color: #6D9668;
+    border-radius: 15px;
+    border: 0px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    
+}
+.login:hover{background-color: #62845c;}
+.login:active{position:relative; top:1px;}
+/*------------------------------------------------------------------------------*/

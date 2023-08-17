@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>after_login_1920</title>
+    <link rel="stylesheet" media="screen and (max-width:1920px)" href="{% static '/css/home/login/login_1920.css' %}">
+    <link rel="stylesheet" media="screen and (min-width:1921px) and (max-width:2560px)" href="{% static '/css/home/login/login_2560.css' %}">
+    <link href="https://webfontworld.github.io/BMHannaPro/BMHannaPro.css" rel="stylesheet"> <!-- 배달의 민족 한나체 (호스팅방식) -->
+</head>
+
+<body>
+    <div id="wrap">
+        <div class=left_box>
+            
+        </div>
+
+        <div class="box">
+            <div class="main_section">
+                <div class="header">
+                    {% comment %} <svg 
+                        width="686" height="84" viewBox="0 0 686 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="62.3636" height="56" fill="#6F9669"/>
+                        <ellipse cx="31.1818" cy="56" rx="31.1818" ry="28" fill="#6F9669"/>
+                        <rect x="623.636" width="62.3636" height="56" fill="#6F9669"/>
+                        <ellipse cx="654.818" cy="56" rx="31.1818" ry="28" fill="#6F9669"/>
+                        <rect x="561.273" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="592.455" cy="56" rx="31.1818" ry="28" fill="white"/>
+                        <rect x="561.273" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="592.455" cy="56" rx="31.1818" ry="28" fill="white"/>
+                        <rect x="498.909" width="62.3636" height="56" fill="#6F9669"/>
+                        <ellipse cx="530.091" cy="56" rx="31.1818" ry="28" fill="#6F9669"/>
+                        <rect x="436.545" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="467.727" cy="56" rx="31.1818" ry="28" fill="white"/>
+                        <rect x="374.182" width="62.3636" height="56" fill="#6F9669"/>
+                        <ellipse cx="405.364" cy="56" rx="31.1818" ry="28" fill="#6F9669"/>
+                        <rect x="311.818" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="343" cy="56" rx="31.1818" ry="28" fill="white"/>
+                        <rect x="311.818" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="343" cy="56" rx="31.1818" ry="28" fill="white"/>
+                        <rect x="249.455" width="62.3636" height="56" fill="#6F9669"/>
+                        <ellipse cx="280.636" cy="56" rx="31.1818" ry="28" fill="#6F9669"/>
+                        <rect x="187.091" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="218.273" cy="56" rx="31.1818" ry="28" fill="white"/>
+                        <rect x="124.727" width="62.3636" height="56" fill="#6F9669"/>
+                        <ellipse cx="155.909" cy="56" rx="31.1818" ry="28" fill="#6F9669"/>
+                        <rect x="62.3636" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="93.5454" cy="56" rx="31.1818" ry="28" fill="white"/>
+                        <rect x="62.3636" width="62.3636" height="56" fill="white"/>
+                        <ellipse cx="93.5454" cy="56" rx="31.1818" ry="28" fill="white"/>
+                    </svg>   {% endcomment %}
+                </div>
+                <form class="dis_section_1 " method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="input_box">
+                            <input type="text" id="id_input" name="username" placeholder="아이디"  size="20" maxlength="15" value="{{form.username.value|default_if_none:''}}" required autofocus>
+                        </div>
+                        <div class="input_box">
+                            <input type="password"  id="pw_input" name="password"  size="20" maxlength="20" placeholder="비밀번호"  value="{{form.password.value|default_if_none:''}}" required>
+                        </div>
+                        <div class="btn_box">
+                            <button class="login_btn" type="submit">로그인</button>
+                            <button class="join_btn" type="button" onclick="location.href='{% url 'signin' %}';">회원가입</button>
+                        </div>
+                </form>
+                <div class = "footer">
+                    <div class = "logo" onclick="location.href='{% url 'index' %}'"></div>
+                </div>
+            </div>
+        </div>
+        <div class=right_box>
+            {% if user.is_authenticated %}
+            <button class="login" type="button" onclick="location.href='{% url 'logout' %}'">로그아웃</button>
+            {% else %}
+            <button class="login" type="button" onclick="location.href='{% url 'login' %}'">로그인</button>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

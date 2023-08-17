@@ -1,0 +1,925 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'BMHannaPro';
+    font-weight: 100;
+    cursor: pointer;
+}
+
+*::selection {
+    background-color: #b7b6b600;
+}
+
+/*------------------------------------left_box for sidebar ------------------------------------------*/
+.left_box {
+    box-sizing: border-box;
+    width: 30%; height: 1250px;
+    display: flex;
+    justify-content: end;
+    /* align-items: center; */
+
+    
+}
+.side_nav{
+    width: 100px; height: 1000px;     /*디폴트 width 13%    fixed width 4%*/
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+
+    position: fixed; 
+    
+    
+}
+.side_nav1 ,.side_nav2/*, .side_nav3, .side_nav4*/{ 
+    width: 100%; height: 50%;
+    border: 6px solid #ABCBA4;
+    border-right: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    writing-mode: vertical-lr;
+
+    
+    font-size: 50px;
+    color: #ABCBA4;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.side_nav1{
+    background-color: #779472;
+    border-color: #577052;
+    color: white;
+}
+.side_nav2{
+    border-top: 0px;
+}
+/* .side_nav3{ 
+    border-top: 0px;
+}
+.side_nav4{
+    border-top: 0px;
+} */
+
+.side_nav1:hover{background-color: rgba(165, 165, 165, 0.911);}
+.side_nav2:hover{background-color: rgba(165, 165, 165, 0.163);}
+/* .side_nav3:hover{background-color: rgba(165, 165, 165, 0.163);}
+.side_nav4:hover{background-color: rgba(165, 165, 165, 0.163);} */
+
+/*--------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------right_box for login ------------------------------------------*/
+.right_box {
+    box-sizing: border-box;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login {
+    width: 187.5px;
+    height: 62.5px;
+    background-color: #6D9668;
+    border-radius: 15px;
+    border: 0px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+.login:hover {
+    background-color: #62845c;
+}
+
+.login:active {
+    position: relative;
+    top: 1px;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------main box for kiosk ------------------------------------------*/
+#wrap {
+    width: 2500px;
+    height: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.5%;
+    left: 1.5%;
+
+}
+
+.kiosk_mega_backdround {
+    /*검정 기계 배경*/
+    box-sizing: border-box;
+    width: 40%;
+    height: 100%;
+    border: 50px solid #000;
+    border-radius: 50px;
+    margin: 0 auto;
+    display: flex;
+
+
+}
+
+.kiosc_mega_screen {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+.screen_top {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    background-color: #F7F7F7;
+    border-radius: 30px;
+
+}
+
+.screen_bottom {
+    width: 100%;
+    height: 20%;
+
+}
+
+#mega_start_img {
+    /*처음 시작 화면*/
+    width: 100%;
+    height: 100%;
+    background: url(../../image/img/mega_start_img.jpg) no-repeat center / cover;
+    /* border-radius: 15px; */
+}
+
+#mega_start_btn {
+    width: 100%;
+    height: 100%;
+    opacity: 0.0;
+    /*불투명도 지정*/
+}
+
+#mega_order {
+    display: none;
+    height: 10%;
+}
+
+/*상단부분*/
+#top_bar {
+    background: #6F9669;
+    width: 100%;
+    height: 50%;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#mega_top_bar_home {
+
+    background: url(../../image/img/mega_top_bar_home.png) no-repeat center / contain;
+    width: 10%;
+    height: 80%;
+}
+
+
+#mega_top_bar_name {
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    background: #6F9669;
+    line-height: 200%;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+#mega_top_bar_lang {
+    width: 10%;
+    height: 100%;
+    background: url(../../image/img/mega_top_bar_lang.png) / contain;
+    line-height: 250%;
+    font-size: larger;
+}
+
+.mega_menu_2,
+.mega_menu_3,
+.mega_menu_4 {
+    display: none;
+    line-height: 200%;
+    font-size: larger;
+}
+
+.mega_menu_1 {
+    line-height: 200%;
+    font-size: larger;
+}
+
+
+
+
+/*메뉴바 부분*/
+#mega_menu_bar {
+    background: #6F9669;
+    color: white;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#menu_bar_left,
+#menu_bar_right {
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+
+/*메뉴부분 4x3 */
+#mega_menu_table {
+    width: 100%;
+    height: 62%;
+    display: none;
+    background: #eeeeee;
+    align-content: space-evenly;
+}
+
+.p1 {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 33%;
+}
+
+.row>div {
+    width: 25%;
+    height: 100%;
+}
+
+
+/*페이지 넘기는 것, 테이블 밑에 바 구현*/
+#nextpage {
+    width: 100%;
+    height: 3%;
+    background: #eeeeee;
+    display: none;
+    justify-content: center;
+    gap: 10px;
+}
+
+#first_page {
+    width: 10%;
+    height: 1vh;
+    border-radius: 5px;
+    background: #bcbcbc;
+}
+
+#second_page {
+    width: 10%;
+    height: 1vh;
+    border-radius: 5px;
+    background: #bcbcbc;
+}
+
+/*주문창*/
+#pay {
+    width: 100%;
+    height: 25%;
+    background: #eeeeee;
+    display: none;
+}
+
+#order_lsit {
+    width: 65%;
+    height: 85%;
+    background: white;
+    font-size: larger;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-top: 5%;
+}
+
+#order_lsit div {
+    height: 30%;
+    border-radius: 20%;
+    color: rgb(0, 0, 0);
+    font-weight: lighter;
+    font-size: large;
+    justify-content: space-evenly;
+    flex-direction: row;
+    display: inline;
+    text-align: start;
+}
+
+#order_lsit div div {
+    height: 30%;
+    text-align: center;
+}
+
+#order_lsit div.menu {
+    width: 40%;
+    text-align: start;
+}
+
+#order_lsit div.delete_button:hover,
+#order_lsit div.plus_button:hover,
+#order_lsit div.minus_button:hover {
+    transform: scale(1.1);
+}
+
+#order_lsit div.delete_button:active,
+#order_lsit div.plus_button:active,
+#order_lsit div.minus_button:active {
+    transform: scale(0.8);
+}
+
+#order_lsit div.delete_button {
+    background: gray;
+    width: 5%;
+    font-size: medium;
+    line-height: 130%;
+    ;
+}
+
+#order_lsit div.plus_button {
+    background: orange;
+    width: 5%;
+    font-size: x-large;
+    line-height: 90%;
+    ;
+}
+
+#order_lsit div.minus_button {
+    background: orange;
+    width: 5%;
+    font-size: large;
+    line-height: 120%;
+    ;
+}
+
+#order_list_right {
+    width: 35%;
+    flex-direction: column;
+}
+
+#pay_right {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#rest_time {
+    font-size: xx-large;
+    text-align: right;
+}
+
+#delete_all {
+    width: 45px;
+    height: 45px;
+    background: url(../../image/img/mege_delete_all.png) no-repeat center / cover;
+}
+
+#item_number {
+    width: 100%;
+    height: 25%;
+    font-size: x-large;
+    text-align: center;
+
+}
+
+#pay_btn {
+    width: 100%;
+    height: 50%;
+    background: #6F9669;
+    border-radius: 8px;
+    display: flex;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#card_img {
+    width: 40px;
+    height: 40px;
+    background: url(../../image/img/mega_card_img.png) no-repeat center / cover;
+}
+
+
+/*테이블 페이지 이동*/
+#right_btn {
+    width: 10%;
+    height: 10%;
+    left: 90%;
+    top: 35%;
+    background: #ffd600;
+    position: absolute;
+    font-weight: bolder;
+    color: white;
+    font-size: 5vh;
+    text-align: center;
+    line-height: 5vh;
+    opacity: 0.6;
+    border-radius: 8px;
+    display: none;
+}
+
+#left_btn {
+    width: 10%;
+    height: 10%;
+    top: 35%;
+    background: #ffd600;
+    position: absolute;
+    font-weight: bolder;
+    color: white;
+    font-size: 5vh;
+    text-align: center;
+    line-height: 5vh;
+    opacity: 0.6;
+    border-radius: 8px;
+    display: none;
+}
+
+#total_price {
+    font-size: x-large;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+
+/*카드 넣기*/
+#screen_bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+#barcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 50%;
+    height: 100%;
+    color: white;
+    margin: 10[x];
+    padding: 0;
+}
+
+.barcode_text {
+    font-size: 30px;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+#barcode_img {
+    margin: 0 auto;
+    width: 50%;
+    height: 20%;
+    background: url(../../image/img/barcode_img.png) no-repeat center / cover;
+
+}
+
+#barcode_png {
+    margin: 0 auto;
+    width: 70%;
+    height: 50%;
+    background: url(../../image/img/barcode.png) no-repeat center / cover;
+}
+
+#barcode_png {
+    position: relative;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10px #6F9669, 0 0 20px #6F9669, 0 0 30px #6F9669;
+    }
+    50% {
+        box-shadow: 0 0 20px #6F9669, 0 0 30px #6F9669, 0 0 40px #6F9669;
+    }
+    100% {
+        box-shadow: 0 0 10px #6F9669, 0 0 20px #6F9669, 0 0 30px #6F9669;
+    }
+}
+#barcode_scan {
+    display: none;
+    position: absolute;
+    left: 25%;
+    top: 130%;
+    width: 128px;
+    width: 128px;
+    background-color: #6f966947;
+    border: 4px dotted #6F9669;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: glowing 1s infinite;
+}
+
+
+#insert_card {
+    position: relative;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    height: 100%;
+    color: #f5f5f5;
+
+}
+
+
+.card_slide {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.card_insert {
+
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+.insert_card_Text {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+#insert_card_block {
+    width: 100%;
+    height: 20%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+}
+
+#use_card_block {
+    width: 100%;
+    height: 30%;
+    background: #424242;
+}
+
+#receipt {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+}
+
+#receipt_exit {
+    width: 100%;
+    height: 20%;
+    border: solid #f5f5f5;
+    border-radius: 35%;
+    border-width: 3px;
+}
+
+#receipt_img {
+    background: url(../../image/img/receipt.png)no-repeat center / cover;
+}
+
+#insert_card_moving {
+    position: absolute;
+    left: 25%;
+    top: 7px;
+    display: block;
+    width: 50%;
+    height: 150%;
+    background: url(../../image/img/card_insert_moving.png) no-repeat center / cover;
+}
+
+
+/*결제 창 페이지*/
+#screen_to_window_pay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #595959;
+    opacity: 0.5;
+}
+
+#window_pay {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    background: white;
+}
+
+#window_top {
+    background: #ABCBA4;
+    width: 100%;
+    height: 10%;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    line-height: 300%;
+}
+
+#window_order_list {
+    width: 100%;
+    height: 60%;
+    background: white;
+    display: inline-block;
+    align-items: center;
+    font-size: x-large;
+}
+
+#window_order_list div {
+    display: flex;
+    width: 90%;
+    height: 13%;
+    margin: auto auto;
+}
+
+#window_order_list>[id^="window_"]>div {
+    height: auto;
+}
+
+#window_num_price {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    border: solid #cac8c8 1px;
+    border-radius: 15px;
+    font-size: larger;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#window_num {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#window_price {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+}
+
+.ex_css {
+    color: red;
+    font-size: 20px;
+}
+
+#window_bottom {
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 5%;
+    margin: 0 auto;
+}
+
+#window_bottom div {
+    border-radius: 15px;
+    line-height: 150%;
+    font-size: x-large;
+    width: 30%;
+    height: 100%;
+}
+
+#돌아가기 {
+    background: #595959;
+}
+
+#먹고가기 {
+
+    background: #FFC000;
+}
+
+#가져가기 {
+    background: #FF0000;
+}
+
+#돌아가기_2 {
+    display: none;
+    background: #595959;
+}
+
+#쿠폰사용 {
+    display: none;
+    background: #FFC000;
+}
+
+#페이코 {
+    display: none;
+    color: red;
+    border: solid red 1px;
+}
+
+#카드결제 {
+    display: none;
+    background: #FF0000;
+}
+
+#w_카드결제 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    background: white;
+}
+
+#w_카드결제_top {
+    background: #6F9669;
+    width: 100%;
+    height: 10%;
+    font-size: xx-large;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    line-height: 250%;
+}
+
+#w_block {
+    padding-top: 15%;
+    width: 90%;
+    height: 35%;
+    justify-content: center;
+    font-size: x-large;
+}
+
+#w_block div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+#insert_card_w {
+    width: 270px;
+    height: 120px;
+    background: url(../../image/img/insert_card_w.png) no-repeat center/cover;
+    margin: auto auto;
+}
+
+#w_list {
+    width: 80%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    padding-bottom: 5%;
+    font-weight: bolder;
+    font-size: 2vh;
+}
+
+#w_list div {
+    height: 30%;
+    line-height: 220%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#w_list_1 {
+    background: #DAE3F3;
+
+}
+
+#w_카드결제_total_price {
+    color: #ef4444;
+}
+
+#w_bottom {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 350%;
+    font-size: xx-large;
+    margin: auto auto;
+
+}
+
+#취소 {
+    width: 35%;
+    background: #595959;
+}
+
+#승인요청 {
+    width: 55%;
+    background: #6F9669;
+}
+
+
+/*메뉴 디스플레이 설정*/
+#커피_HOT,
+#커피_ICE {
+    display: none;
+}
+
+#추천_음료_p2 {
+    display: none;
+}
+
+#스무디_프라페,
+#스무디_프라페_p2 {
+    display: none;
+}
+
+#에이드_주스,
+#에이드_주스_p2 {
+    display: none;
+}
+
+#Tea,
+#Tea_p2 {
+    display: none;
+}
+
+#커피_콜드브루 {
+    display: none;
+}
+
+#아이스크림 {
+    display: none;
+}
+
+#Beverage,
+#Beverage_2p {
+    display: none;
+}
+
+#디저트 {
+    display: none;
+}
+
+#병음료 {
+    display: none;
+}
+
+#MD상품 {
+    display: none;
+}
+
+#세트상품 {
+    display: none;
+}
+
+/*결제창*/
+#window_pay {
+    display: none;
+}
+
+#screen_to_window_pay {
+    display: none;
+}
+
+#w_카드결제 {
+    display: none;
+}
+
+#insert_card_moving {
+    display: none;
+}
+
+
+
+
+.author {
+    font-size: 11px;
+    color: #D0CECE;
+}
+
+
+/*도움말*/
+#inform {
+    padding-top: 30px;
+
+    font-size: 20px;
+    font-weight: bold;
+}

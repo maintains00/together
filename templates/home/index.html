@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" media="screen and (max-width:1920px)" href="{% static '/css/home/main/main_1920.css' %}?after">
+    <link rel="stylesheet" media="screen and (min-width:1921px) and (max-width:2560px)" href="{% static '/css/home/main/main_2560.css' %}?after">
+    <link href="https://webfontworld.github.io/BMHannaPro/BMHannaPro.css" rel="stylesheet"> <!-- 배달의 민족 한나체 (호스팅방식) -->
+</head>
+<body>
+    <div id = "wrap">
+        <div class = left_box></div>
+        <div class = "box">
+            <div class = "main_section">
+                <div class = "header">
+                    {% comment %} <svg width="882" height="116" viewBox="0 0 882 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" width="80.1818" height="70" fill="#6F9669"/>
+                        <rect x="81" width="80.1818" height="70" fill="white"/>
+                        <rect x="161" width="80.1818" height="70" fill="#6F9669"/>
+                        <rect x="241" width="80.1818" height="70" fill="white"/>
+                        <rect x="321" width="80.1818" height="70" fill="#6F9669"/>
+                        <rect x="401" width="80.1818" height="70" fill="white"/>
+                        <rect x="481" width="80.1818" height="70" fill="#6F9669"/>
+                        <rect x="561" width="80.1818" height="70" fill="white"/>
+                        <rect x="641" width="80.1818" height="70" fill="#6F9669"/>
+                        <rect x="721" width="80.1818" height="70" fill="white"/>
+                        <rect x="801" width="80.1818" height="70" fill="#6F9669"/>
+                        <circle cx="41.0909" cy="75.0909" r="40.0909" fill="#6F9669"/>
+                        <circle cx="121.091" cy="75.0909" r="40.0909" fill="white"/>
+                        <circle cx="201.091" cy="75.0909" r="40.0909" fill="#6F9669"/>
+                        <circle cx="281.091" cy="75.0909" r="40.0909" fill="white"/>
+                        <circle cx="361.091" cy="75.0909" r="40.0909" fill="#6F9669"/>
+                        <circle cx="441.091" cy="75.0909" r="40.0909" fill="white"/>
+                        <circle cx="521.091" cy="75.0909" r="40.0909" fill="#6F9669"/>
+                        <circle cx="601.091" cy="75.0909" r="40.0909" fill="white"/>
+                        <circle cx="681.091" cy="75.0909" r="40.0909" fill="#6F9669"/>
+                        <circle cx="761.091" cy="75.0909" r="40.0909" fill="white"/>
+                        <circle cx="841.091" cy="75.0909" r="40.0909" fill="#6F9669"/>
+                        </svg>                         {% endcomment %}
+                </div>
+                <div class = "dis_section">
+                    <div class = dis_btn>
+                        <div id = hex>
+                            <svg width="70" height="80" viewBox="0 0 70 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.641 0L69.282 20V60L34.641 80L0 60V20L34.641 0Z" fill="#6F9669"/>
+                                <path d="M35.54 29.1818V51H30.927V33.5604H30.7992L25.8027 36.6925V32.6016L31.204 29.1818H35.54ZM42.2489 51.277C41.5458 51.277 40.9421 51.0284 40.4379 50.5312C39.9407 50.027 39.6921 49.4233 39.6921 48.7202C39.6921 48.0241 39.9407 47.4276 40.4379 46.9304C40.9421 46.4332 41.5458 46.1847 42.2489 46.1847C42.9308 46.1847 43.5273 46.4332 44.0387 46.9304C44.5501 47.4276 44.8058 48.0241 44.8058 48.7202C44.8058 49.1889 44.685 49.6186 44.4435 50.0092C44.2092 50.3928 43.9002 50.7017 43.5167 50.9361C43.1332 51.1634 42.7106 51.277 42.2489 51.277Z" fill="white"/>
+                            </svg>                                  
+                        </div>
+                        <div class = hex2>자세한 사용법을 통해 쉽게 알려드려요</div>
+                    </div>
+                    <div class = "dis_img"></div>
+                    <div class = dis_btn2>
+                        <div id = hex3>
+                            <svg width="70" height="80" viewBox="0 0 70 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.641 0L69.282 20V60L34.641 80L0 60V20L34.641 0Z" fill="#6F9669"/>
+                                <path d="M23.3525 51V47.6761L31.1188 40.4851C31.7793 39.8459 32.3333 39.2706 32.7807 38.7592C33.2353 38.2479 33.5797 37.7472 33.8141 37.2571C34.0485 36.7599 34.1657 36.2237 34.1657 35.6484C34.1657 35.0092 34.0201 34.4588 33.7289 33.9972C33.4377 33.5284 33.04 33.1697 32.5357 32.9212C32.0314 32.6655 31.4597 32.5376 30.8205 32.5376C30.1529 32.5376 29.5705 32.6726 29.0733 32.9425C28.5762 33.2124 28.1926 33.5994 27.9228 34.1037C27.6529 34.608 27.5179 35.2081 27.5179 35.9041H23.1394C23.1394 34.4766 23.4625 33.2372 24.1088 32.1861C24.7551 31.1349 25.6607 30.3217 26.8255 29.7464C27.9902 29.1712 29.3326 28.8835 30.8525 28.8835C32.415 28.8835 33.775 29.1605 34.9327 29.7145C36.0975 30.2614 37.003 31.0213 37.6493 31.9943C38.2956 32.9673 38.6188 34.0824 38.6188 35.3395C38.6188 36.1634 38.4554 36.9766 38.1287 37.7791C37.8091 38.5817 37.2374 39.473 36.4135 40.4531C35.5897 41.4261 34.4284 42.5945 32.9299 43.9581L29.7445 47.0795V47.2287H38.9064V51H23.3525ZM44.9442 51.277C44.2411 51.277 43.6374 51.0284 43.1332 50.5312C42.636 50.027 42.3874 49.4233 42.3874 48.7202C42.3874 48.0241 42.636 47.4276 43.1332 46.9304C43.6374 46.4332 44.2411 46.1847 44.9442 46.1847C45.6261 46.1847 46.2227 46.4332 46.734 46.9304C47.2454 47.4276 47.5011 48.0241 47.5011 48.7202C47.5011 49.1889 47.3803 49.6186 47.1388 50.0092C46.9045 50.3928 46.5955 50.7017 46.212 50.9361C45.8285 51.1634 45.4059 51.277 44.9442 51.277Z" fill="white"/>
+                            </svg>                                    
+                        </div>
+                        <div class = hex4>퀴즈 풀면서 메달을 모아보자!</div>
+                    </div>
+                </div>
+                <div class="text_section">
+                    여러 상황에서의 화면 사용이 어려우셨나요?<br>
+                    연습과 퀴즈를 통해 키오스크 이용법을 익혀보세요!
+                </div>
+                <div class = "nav_section">
+                    <button class = "nav1" onclick="location.href='{% url 'kiosk' %}'">키오스크</button>
+                    {% comment %} <button class = "nav2" onclick="location.href=';'">은행</button>
+                    <button class = "nav3" onclick="location.href=';'">버스</button> {% endcomment %}
+                    <button class = "nav2" onclick="location.href=';'">게시판</button>
+                </div>
+                <div class = "footer">
+                    <div class = "logo" onclick="location.href='{% url 'index' %}'"></div>
+                </div>
+            </div>    
+        </div>
+        <div class = right_box>
+            {% if user.is_authenticated %}
+            <button class="login" type="button" onclick="location.href='{% url 'logout' %}'">로그아웃</button>
+            {% else %}
+            <button class="login" type="button" onclick="location.href='{% url 'login' %}'">로그인</button>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

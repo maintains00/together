@@ -1,0 +1,572 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen and (max-width:1920px)" href="{% static '/css/kiosk/order_mission/order_mission_1920.css' %}">
+    <link rel="stylesheet" media="screen and (min-width:1921px) and (max-width:2560px)" href="{% static '/css/kiosk/order_mission/order_mission_2560.css' %}">
+    <link rel="stylesheet" media="screen and (max-width:1920px)" href="{% static '/css/kiosk/common/common_1920.css' %}">
+    <link rel="stylesheet" media="screen and (min-width:1921px) and (max-width:2560px)" href="{% static '/css/kiosk/common/common_2560.css' %}">
+    <link rel="stylesheet" href="{% static '/css/kiosk/mega_menu.css' %}?after">
+    <title>키오스크 주문 미션</title>
+    <link href="https://webfontworld.github.io/BMHannaPro/BMHannaPro.css" rel="stylesheet">
+</head>
+
+<div id="wrap">
+    <div class=left_box>
+        <div class="side_nav">
+            <button class="side_nav1" type="button"
+                onclick="location.href='{% url 'kiosk' %}'">키오스크</button>
+            {% comment %} <button class="side_nav2" type="button" onclick="location.href='#';">은행</button>
+            <button class="side_nav3" type="button" onclick="location.href='#';">버스</button> {% endcomment %}
+            <button class="side_nav2" type="button" onclick="location.href='#';">게시판</button>
+        </div>
+    </div>
+    <div class="kiosk_mega_backdround">
+
+        <div class="kiosc_mega_screen">
+
+            <div class="screen_top">
+                <div class="level_button">
+                    <h1>미션 난이도 선택</h1>
+                    <button id="level1" type="button" value="1">초급</button>
+                    <button id="level2" type="button" value="2">중급</button>
+                    <button id="level3" type="button" value="3">고급</button>
+                </div>
+                <div id="mega_start_img">
+                    <button id="mega_start_btn"></button>
+                </div>
+
+
+                <div id="mega_order">
+                    <div id="top_bar">
+                        <div id="mega_top_bar_home"></div>
+                        <div id="mega_top_bar_name">주문 미션</div>
+                        <div id="mega_top_bar_lang">LANG</div>
+                    </div>
+
+                    <div id="mega_menu_bar">
+                        <div id="menu_bar_left">&#60;</div>
+                        <div class="mega_menu_1" title="추천_음료">추천(음료)</div>
+                        <div class="mega_menu_1" title="Beverage">Beverage
+                        </div>
+                        <div class="mega_menu_1" title="커피_HOT">커피(HOT)</div>
+                        <div class="mega_menu_1" title="커피_ICE">커피(ICE)</div>
+
+
+                        <div class="mega_menu_2" title="스무디_프라페">스무디&프라페</div>
+                        <div class="mega_menu_2" title="에이드_주스">에이드&주스</div>
+                        <div class="mega_menu_2" title="Tea">TEA</div>
+                        <div class="mega_menu_2" title="커피_콜드브루">커피(콜드브루)
+                        </div>
+                        <div id="menu_bar_right">></div>
+                    </div>
+                </div>
+
+
+                <div id="mega_menu_table">
+                    <div id="right_btn">></div>
+                    <div id="left_btn">&#60;</div>
+
+                    <div id="추천_음료" class="p1">
+                        <div class="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000" class="pick_item"></div>
+                            <div id="유니콘프라페" data-price="4800" class="pick_item"></div>
+                            <div id="딸기쿠키프라페" data-price="3900" class="pick_item"></div>
+                            <div id="커피프라페" data-price="3900" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_토피넛마끼아또" title="coldbrew" data-price="3900" class="pick_item"></div>
+                            <div id="ice_토피넛마끼아또" title="coldbrew" data-price="3900" class="pick_item"></div>
+                            <div id="hot_레몬차" data-price="3000" class="pick_item"></div>
+                            <div id="ice_레몬차" data-price="3000" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_사과유자차" data-price="3500" class="pick_item"></div>
+                            <div id="ice_사과유자차" data-price="3500" class="pick_item"></div>
+                            <div id="hot_허니자몽블랙티" data-price="3500" class="pick_item"></div>
+                            <div id="ice_허니자몽블랙티" data-price="3500" class="pick_item"></div>
+                        </div>
+                    </div>
+
+                    <div id="추천_음료_p2" class="p1">
+                        <div class="row">
+                            <div id="ice_흑당버블그린티라떼" data-price="3800" class="pick_item"></div>
+                            <div id="ice_흑당버블밀크티라떼" data-price="3800" class="pick_item"></div>
+                            <div id="ice_흑당라떼" data-price="3000" class="pick_item"></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+
+                    <div id="추천_디저트" class="p1">
+
+                    </div>
+
+
+                    <div id="커피_HOT" class="p1">
+                        <div class="row">
+                            <div id="hot_아메리카노" title="coffee" data-price="1500" class="pick_item"></div>
+                            <div id="hot_꿀아메리카노" title="coffee" data-price="2500" class="pick_item"></div>
+                            <div id="hot_헤이즐넛라떼" title="coffee" data-price="3200" class="pick_item"></div>
+                            <div id="hot_바닐라아메리카노" title="coffee" data-price="2500" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_카페라떼" title="coffee" data-price="2700" class="pick_item"></div>
+                            <div id="hot_카푸치노" title="coffee" data-price="2700" class="pick_item"></div>
+                            <div id="hot_연유라뗴" title="coffee" data-price="3700" class="pick_item"></div>
+                            <div id="hot_티라미수라떼" title="coffee" data-price="3900" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_캬라멜마끼아또" title="coffee" data-price="3500" class="pick_item"></div>
+                            <div id="hot_바닐라라떼" title="coffee" data-price="3200" class="pick_item"></div>
+                            <div id="hot_헤이즐넛아메리카노" title="coffee" data-price="2500" class="pick_item"></div>
+                            <div id="hot_카메모카" title="coffee" data-price="3700" class="pick_item"></div>
+                        </div>
+                    </div>
+
+                    <div id="커피_ICE" class="p1">
+                        <div class="row">
+                            <div id="ice_아메리카노" title="coffee" data-price="2000" class="pick_item"></div>
+                            <div id="ice_꿀아메리카노" title="coffee" data-price="2500" class="pick_item"></div>
+                            <div id="ice_헤이즐넛아메리카노" title="coffee" data-price="2500" class="pick_item"></div>
+                            <div id="ice_바닐라아메리카노" title="coffee" data-price="2500" class="pick_item"></div>
+                        </div>
+                        <div class="row" class="p1">
+                            <div id="ice_카페라떼" title="coffee" data-price="2700" class="pick_item"></div>
+                            <div id="ice_바닐라라떼" title="coffee" data-price="3200" class="pick_item"></div>
+                            <div id="ice_큐브라떼" title="coffee" data-price="3900" class="pick_item"></div>
+                            <div id="ice_티라미수라떼" title="coffee" data-price="3900" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="ice_캬라멜마끼아또" title="coffee" data-price="3500" class="pick_item"></div>
+                            <div id="ice_카푸치노" title="coffee" data-price="2700" class="pick_item"></div>
+                            <div id="ice_헤이즐넛라떼" title="coffee" data-price="3200" class="pick_item"></div>
+                            <div id="ice_카메모카" title="coffee" data-price="3700" class="pick_item"></div>
+                        </div>
+                    </div>
+
+                    <div id="스무디_프라페" class="p1">
+                        <div class="row">
+                            <div id="쿠키프라페" data-price="3900" class="pick_item"></div>
+                            <div id="민트프라페" data-price="3900" class="pick_item"></div>
+                            <div id="유니콘프라페" data-price="4800" class="pick_item"></div>
+                            <div id="리얼초코프라페" data-price="3900" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="녹차프라페" data-price="3900" class="pick_item"></div>
+                            <div id="딸기쿠키프라페" data-price="3900" class="pick_item"></div>
+                            <div id="스트로베리치즈홀릭" data-price="4500" class="pick_item"></div>
+                            <div id="커피프라페" data-price="3900" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="퐁크러쉬플레인" data-price="3900" class="pick_item"></div>
+                            <div id="퐁크러쉬딸기" data-price="3900" class="pick_item"></div>
+                            <div id="퐁크러쉬바나나" data-price="3900" class="pick_item"></div>
+                            <div id="플레인요거트스무디" data-price="3900" class="pick_item"></div>
+                        </div>
+                    </div>
+                    <div id="스무디_프라페_p2" class="p1">
+                        <div class="row">
+                            <div id="딸기요거트스무디" data-price="3900" class="pick_item"></div>
+                            <div id="망고요거트스무디" data-price="3900" class="pick_item"></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div id="에이드_주스" class="p1">
+                        <div class="row">
+                            <div id="레몬에이드" data-price="3500" class="pick_item"></div>
+                            <div id="블루레몬에이드" data-price="3500" class="pick_item"></div>
+                            <div id="자몽에이드" data-price="3500" class="pick_item"></div>
+                            <div id="메가에이드" data-price="3900" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="청포도에이드" data-price="3500" class="pick_item"></div>
+                            <div id="매직에이드(블루)" data-price="3500" class="pick_item"></div>
+                            <div id="매직에이드(핑크)" data-price="3500" class="pick_item"></div>
+                            <div id="체리콕" data-price="3000" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="라임모히또" data-price="3800" class="pick_item"></div>
+                            <div id="청포도모히또" data-price="3800" class="pick_item"></div>
+                            <div id="자몽모히또" data-price="3800" class="pick_item"></div>
+                            <div id="딸기주스" data-price="3800" class="pick_item"></div>
+                        </div>
+                    </div>
+                    <div id="에이드_주스_p2" class="p1">
+                        <div class="row">
+                            <div id="초코바나나주스" data-price="3800" class="pick_item"></div>
+                            <div id="오곡바나나주스" data-price="3800" class="pick_item"></div>
+                            <div id="딸기바나나주스" data-price="3800" class="pick_item"></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div id="Tea" class="p1">
+                        <div class="row">
+                            <div id="hot_녹차" data-price="2500" class="pick_item"></div>
+                            <div id="hot_페퍼민트" data-price="2500" class="pick_item"></div>
+                            <div id="hot_캐모마일" data-price="2500" class="pick_item"></div>
+                            <div id="hot_얼그레이" data-price="2500" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_허니자몽블랙티" data-price="3500" class="pick_item"></div>
+                            <div id="hot_레몬차" data-price="3000" class="pick_item"></div>
+                            <div id="hot_자몽차" data-price="3000" class="pick_item"></div>
+                            <div id="hot_유자차" data-price="3000" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_사과유자차" data-price="3500" class="pick_item"></div>
+                            <div id="ice_녹차" data-price="2500" class="pick_item"></div>
+                            <div id="ice_페퍼민트" data-price="2500" class="pick_item"></div>
+                            <div id="ice_캐모마일" data-price="2500" class="pick_item"></div>
+                        </div>
+                    </div>
+
+                    <div id="Tea_p2" class="p1">
+                        <div class="row">
+                            <div id="ice_얼그레이" data-price="2500" class="pick_item"></div>
+                            <div id="ice_허니자몽블랙티" data-price="3500" class="pick_item"></div>
+                            <div id="ice_레몬차" data-price="3000" class="pick_item"></div>
+                            <div id="ice_자몽차" data-price="3000" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="ice_유자차" data-price="3000" class="pick_item"></div>
+                            <div id="ice_사과유자차" data-price="3500" class="pick_item"></div>
+                            <div id="복숭아아이스티" data-price="3000" class="pick_item"></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div id="커피_콜드브루" class="p1">
+                        <div class="row">
+                            <div id="hot_콜드브루오리지널" data-price="3300" class="pick_item"></div>
+                            <div id="hot_콜드브루라떼" data-price="3800" class="pick_item"></div>
+                            <div id="ice_콜드브루오리지널" data-price="3300" class="pick_item"></div>
+                            <div id="ice_콜드브루라떼" data-price="3800" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="콜드브루상품용" data-price="20000" class="pick_item"></div>
+                            <div id="hot_콜드브루디카페인" data-price="3300" class="pick_item"></div>
+                            <div id="hot_콜드브루디카페인라떼" data-price="3800" class="pick_item"></div>
+                            <div id="ice_콜드브루디카페인" data-price="3300" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="ice_콜드블루디카페인라떼" data-price="3800" class="pick_item"></div>
+                            <div id="콜드브루디카페인상품용" data-price="20000" class="pick_item"></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div id="Beverage" class="p1">
+                        <div class="row">
+                            <div id="hot_녹차라떼" data-price="3200" class="pick_item"></div>
+                            <div id="핫초코" data-price="3200" class="pick_item"></div>
+                            <div id="hot_메가초코" data-price="3800" class="pick_item"></div>
+                            <div id="hot_민트크림초코" data-price="3500" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_고구마라떼" data-price="3500" class="pick_item"></div>
+                            <div id="hot_곡물라떼" data-price="3000" class="pick_item"></div>
+                            <div id="hot_로얄밀크티라떼" data-price="3500" class="pick_item"></div>
+                            <div id="ice_딸기라떼" data-price="3500" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="ice_녹차라떼" data-price="3200" class="pick_item"></div>
+                            <div id="아이스초코" data-price="3200" class="pick_item"></div>
+                            <div id="ice_메가초코" data-price="3800" class="pick_item"></div>
+                            <div id="ice_민트크림초코" data-price="3500" class="pick_item"></div>
+                        </div>
+                    </div>
+                    <div id="Beverage_2p" class="p1">
+                        <div class="row">
+                            <div id="ice_고구마라떼" data-price="3500" class="pick_item"></div>
+                            <div id="ice_곡물라떼" data-price="3000" class="pick_item"></div>
+                            <div id="ice_로얄밀크티라떼" data-price="3500" class="pick_item"></div>
+                            <div id="ice_오레오초코라떼" data-price="3900" class="pick_item"></div>
+                        </div>
+                        <div class="row">
+                            <div id="hot_토피넛라떼" data-price="3800" class="pick_item"></div>
+                            <div id="ice_토피넛라떼" data-price="3800" class="pick_item"></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div id="디저트" class="p1"></div>
+
+                </div>
+
+
+                <div id="nextpage">
+                    <div id="first_page"></div>
+                    <div id="second_page"></div>
+                </div>
+
+
+                <div id="pay">
+                    <div id="order_lsit">
+                        <div id="order_1" class="cart">
+                            <div class="delete_button" id="delete_1">X</div>
+                            <div id="range_1" class="menu"></div>
+                            <div class="minus_button" id="minus_1">ㅡ</div>
+                            <div id="amount_1"></div>
+                            <div class="plus_button" id="plus_1">+</div>
+                            <div id="item_price_1"></div>
+                        </div>
+                        <div id="order_2" class="cart">
+                            <div class="delete_button" id="delete_2">X</div>
+                            <div id="range_2" class="menu"></div>
+                            <div class="minus_button" id="minus_2">ㅡ</div>
+                            <div id="amount_2"></div>
+                            <div class="plus_button" id="plus_2">+</div>
+                            <div id="item_price_2"></div>
+                        </div>
+                        <div id="order_3" class="cart">
+                            <div class="delete_button" id="delete_3">X</div>
+                            <div id="range_3" class="menu"></div>
+                            <div class="minus_button" id="minus_3">ㅡ</div>
+                            <div id="amount_3"></div>
+                            <div class="plus_button" id="plus_3">+</div>
+                            <div id="item_price_3"></div>
+                        </div>
+                        <div id="order_4" class="cart">
+                            <div class="delete_button" id="delete_4">X</div>
+                            <div id="range_4" class="menu"></div>
+                            <div class="minus_button" id="minus_4">ㅡ</div>
+                            <div id="amount_4"></div>
+                            <div class="plus_button" id="plus_4">+</div>
+                            <div id="item_price_4"></div>
+                        </div>
+                        <div id="order_5" class="cart">
+                            <div class="delete_button" id="delete_5">X</div>
+                            <div id="range_5" class="menu"></div>
+                            <div class="minus_button" id="minus_5">ㅡ</div>
+                            <div id="amount_5"></div>
+                            <div class="plus_button" id="plus_5">+</div>
+                            <div id="item_price_5"></div>
+                        </div>
+                        <div id="order_6" class="cart">
+                            <div class="delete_button" id="delete_6">X</div>
+                            <div id="range_6" class="menu"></div>
+                            <div class="minus_button" id="minus_6">ㅡ</div>
+                            <div id="amount_6"></div>
+                            <div class="plus_button" id="plus_6">+</div>
+                            <div id="item_price_6"></div>
+                        </div>
+                        <div id="order_7" class="cart">
+                            <div class="delete_button" id="delete_7">X</div>
+                            <div id="range_7" class="menu"></div>
+                            <div class="minus_button" id="minus_7">ㅡ</div>
+                            <div id="amount_7"></div>
+                            <div class="plus_button" id="plus_7">+</div>
+                            <div id="item_price_7"></div>
+                        </div>
+
+                    </div>
+
+                    <div id="order_list_right">
+                        <div id="pay_right">
+                            <div id="rest_time"></div>
+                            <!-- <div id="delete_all" onclick="전체삭제()"></div> -->
+                        </div>
+                        <div id="item_number">________<br>선택한 상품 </div>
+                        <div id="pay_btn">
+                            <div id="card_img"></div>
+                            <div id="total_price">0원<br>결제하기</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="screen_to_window_pay"></div>
+
+                <div id="window_pay">
+                    <div id="window_top">
+                        <p>주문 세부내역을 확인 후 결제해주세요</p>
+                        <div class="close_window_pay">X</div>
+                    </div>
+                    <div id="window_order_list">
+                        <div id="window_1">
+                            <div id="w_order_1"></div>
+                            <div id="w_number_1"></div>
+                        </div>
+                        <div id="window_2">
+                            <div id="w_order_2"></div>
+                            <div id="w_number_2"></div>
+                        </div>
+                        <div id="window_3">
+                            <div id="w_order_3"></div>
+                            <div id="w_number_3"></div>
+                        </div>
+                        <div id="window_4">
+                            <div id="w_order_4"></div>
+                            <div id="w_number_4"></div>
+                        </div>
+                        <div id="window_5">
+                            <div id="w_order_5"></div>
+                            <div id="w_number_5"></div>
+                        </div>
+                        <div id="window_6">
+                            <div id="w_order_6"></div>
+                            <div id="w_number_6"></div>
+                        </div>
+                        <div id="window_7">
+                            <div id="w_order_7"></div>
+                            <div id="w_number_7"></div>
+                        </div>
+
+                    </div>
+                    <div id="window_num_price">
+                        <div id="window_num">
+                            <div>총 수량 &nbsp;</div>
+                            <div id="w_total_number" class="ex_css"></div>
+                            <div>개</div>
+                        </div>
+                        <div id="window_price">
+                            <div>총 결제금액 &nbsp;</div>
+                            <div id="w_total_price" class="ex_css">sd</div>
+                            <div>원</div>
+                        </div>
+                    </div>
+                    <div id="window_bottom">
+                        <div id="돌아가기" class="close_window_pay">←<br>돌아가기</div>
+                        <div id="먹고가기" class="change_window_btn"><br>먹고가기</div>
+                        <div id="가져가기" class="change_window_btn"><br>가져가기</div>
+
+                        <div id="돌아가기_2"><br>돌아가기</div>
+                        <div id="쿠폰사용"><br>쿠폰사용</div>
+                        <div id="페이코"><br>PAYCO</div>
+                        <div id="카드결제"><br>카드결제</div>
+
+                    </div>
+
+                </div>
+
+                <div id="w_카드결제">
+                    <div id="w_카드결제_top">
+                        <div> 카드 결제</div>
+                        <div class="close_w_카드결제">X</div>
+                    </div>
+                    <div id="w_block">
+                        <div>다음 그림과 같이 신용/체크카드를 넣어주세요</div>
+                        <div id="insert_card_w"></div>
+                    </div>
+                    <div id="w_list">
+                        <div id="w_list_1">
+                            <div>총 결제금액</div>
+                            <div id="w_카드결제_total_price">sd</div>
+                        </div>
+                        <div>
+                            <div>할부개월</div>
+                            <div>일시불</div>
+                        </div>
+                        <div id="w_list_1">
+                            <div>카드번호</div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div id="w_bottom">
+                        <div id="취소" class="close_w_카드결제">취소</div>
+                        <div id="승인요청"> 승인요청</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="screen_bottom" id="screen_bottom">
+                <div id="barcode">
+                    <div id="barcode_img"></div>
+                    <div class="barcode_text">바코드를 대주세요</div>
+                    <div id="barcode_png">
+                        <div id='barcode_scan'>
+                            <svg width="128" height="128" viewBox="0 0 128 128" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="128" height="128" fill="url(#pattern0)" />
+                            <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1"
+                                    height="1">
+                                    <use xlink:href="#image0_2_3" transform="scale(0.0078125)" />
+                                </pattern>
+                                <image id="image0_2_3" width="128" height="128"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADsQAAA7EB9YPtSQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAmGSURBVHic7Z15bBTXHce/v1kbDBjIOoaAXQcDjjlsMESxMaHFFziYtFRQtalSlKIW6BGaVCGpRJqeUoiqEKmVCmqE1EYNVdqqpSqUOHaxYyAcPtRAikM4jQPmsOM1lBjb4Hm//gG77DHLOOwxhvf7SJb2zXvz+73VfLyzY78DEARBXyj4wPRHFsw2DK5gxoSYJibFYOO4i7D9UEPNsVjmGqzkFZRlm8RLwJzFbIRci2hChFalqPLDpp3vBxz3L+QWlLwA0CsAXLHsTBC9xLTyv401f4pjTsfJzS9bDuLNAJLimNYEeN3hhndf9R7wCXDjN181Ir4X30u3y4Uph/bXtjmQO+7kzS1NN00cBTDCgfSmUka+95PA8B41DLUYzlx8ABih+qnYodxxx+ynEjhz8QHAZRhc4S34BABRmiPduYkiJDiZP54wOfaLdgNCuvelcbt2caQv0TB3Od2JeHHzvfY53Q9gcAhgMvNzBw/UnXa6I/Hi4IG600y0FoDpdF8G+LHLZwA6EPXsTCdA5tbmxrqmqMce5DTX12zMLSiuB7uWgTgr+hm4EKAMu1YDE4Cw73B97dcj7pMQwOGGuiYAMZE/d07Jn8F4wq7dYLgFCA4iAmiOCKA5IoDmiACaIwJojgigOSKA5ogAmiMCaI4IoDkigOaIAJojAmiOCKA5IoDmiACaE7WRuC0tLUnJycnlhmFkE5Gzo17vUZi5n4iOud3uaiKKyqDSqAjQ1dVVpJR6E0AGADBzNMIKFjAzPB7Pma6uruVut3t3pPEivgV4PJ6ZSqm3cfPiC3EhQylV6fF4ZkQayE8AbgnbinEybBXzKwCGR9oR4TMzXCm1Plwlg8JfT4VT3pc+AVxM2wD0WjQ3Af6HZRLmIQAWDqS3QvQhonJmTrSsVLQV1vMOel2E7d6CT4BDDTXHiGklgG6/xn3M/MzN4cshtLe3uwFYd0CIB0Pa29tTrCqaG2samehZBM5A6iamlf7T8UPmpOfNLU1X/VSsCAmJhrnrdjN2Ojo6xhuGcS6CNyBEiFIqbcyYMefD1c8qLM68rlxFBqPfSOC64BnYES1KIAI4j50AdsgfgjRHBNAcEUBzRADNidmqHGfbzmP3vgbbdpMzH8Sc/NkAgH/uqEb31R5fXdq4sSj+wlzL81pOf4z9Df+xjZ83YzpypmUHHNuzrwFn2s5j6kOT8PCsG39MY2a89bdtAe0mZKRhXmG+ZdxPOj2ort1jm98/BwDs2nsAbecu+soJLhe+tuyLvvLJllbUNx0MiDH/0QJ8Ln28ba47IWYCnGhpxeu/32LbbtGCIp8AW/6yFe0dnb66/Ifzwgpw7GQLXv+D/cJiq1Y8GSJAZfW72FvfhKVfWhQgQHB/i+YVhhXg3IX2Ab0//xwAsKOqFvWNt1ZqS0xMCBDgyNETIXHTxj8QMwHkFqA5IoDmiACaIwJojgigOSKA5ogAmiMCaI4IoDkigOaIAJojAmiOCKA5IoDmiACaIwJojgigOSKA5oRMDPm0fPI3GbQKgO0YJHK5XJw6znKH0Z7eXnR1XbbtwLBhSXDfNxoAcLG9A6apfHVDhw7B/Sluy/Ou9vTg0qX/2cYfOTIZI5MDd2jzdF1Cb28fRgwfhtGjRwG4MSTs/IX2gHZJSUOR4r7PMm7ftWvo7Oyyze+fAwA6PV3o67vmKxMB48c94Ct3X+3B5cuB78vtHo1hSdb7S9InF1rZNO33HiI6R1Cbk6tO/jHgsH/hSnnWJgDfsw0m3M1sGll94mlvwSfAlYVZRSDUOdIlIZ4wk1E0qurYHsDvOwABFeHPEe4hyGC12FuQL4Ga4xOAid4GIIv73PuwUmqHt+ATYGT18d0gbHKmT0LcYGwctfPUe95i6GPgY5OfYsZKgNKD64KRx8C76DEQ3EZEm5OrTrwZcL79ieG53QIRde8dwM9efs02xqIFRVi3dg0A4KtPfTdkatiGl1+yPK+qZhfWb/itbfxVK57E8ieWBhx78ee/8k0N++H3vw0AUEqh5PHAjTaL5hXily+ttYz7QfNH+MHzP7HN758DAH700/UhU8N2bnvLV/7XOzV49Te/C4jxix+vRfHnCy3jywIRQkSIAJojAmiOCKA5IoDmiACaIwJojgigOSKA5ogAmiMCaI4IoDkigOaIAJojAmiOCKA5IoDmiACaE7PVwrMnT8Rza1bZtnsw49bQw9UrvoGrPbeWix875v6w5+VMm4Lnn1kdcMw0Fa76LTcP3FguPpiK8hLk5kzF1Icm+Y4REb7zreUB7SZkpIXNnzZubEh7K/xzAMDjj5Vi1owcXznBFbjL7rQpWSFxsyZaDruMCrJp1F2OjAkUIkIE0BwRQHNEAM0JeQr4LFvHCoOfmQXlE02Y88NtHRvwCZCbX7bcNHGUibcQ+I1+ZXyUM6fsaYRBKaXC1Qnx4XbXYEZB6RqF/iMEfoOJt5gmjubmlwU8Y/oeA/MKyrJN8CEAwZPQTGaa29xY0xicgJkTPR7PpwCGRPg+hDvjWkpKSjIRXQ+uyMkvyyfi/QBcQVW9LlCedwdx3yeACfVlhF58AHARsNTiOIjoOhFV3nn/hUhg5iqriw8AIP4KQi8+ACSZxEu8hVu3ADIyw2Yy1KRwVUqpdQCu2PZWiDbdhmG8GK6SiDPDn0oTva8ifgpITU09wswLARyPNJYwYFqJqCIlJeVwpIGi8r+A1NTUemae3tnZWQQgxzCMYdGIKwTCzP1EdNTtdv+biPqiETNq/wwion4ANTd/hLsE+UOQ5ogAmiMCaI4IoDkigOaIAJojAmiOCKA5IoDmiACaIwJojgigOSKA5ogAmiMCaI4IoDkigOYMbEQQ49HcgtK/Rjs5E05C0VarIec6kJNflg+DlxFjctSDM1tvMRLEAIeEUQaAjAi6Yx2VARC/kDOn7Nnm+pqN0Y4/mJlRULqGwb8GWw7djgIDm/k/GG4BLmJ+bVZhcabTHYkXMwvKJzKwAdbj9uPKYBAAAIZeV64ipzsRL0yY8wEMdbofgL8AjLbbtIs5BpT1DJd7EIPR72wP1FnvK58ASlElgAHsPxcTug0X7XIod9wxErgOQLdD6U1lut7xFnz3oI5zpy6MTc/sAagU8b019BLT6g/qa/fGMaejXDzbcmVs2qSPQViMGC7UZYEJ8Lrmxtq/ew+EfFWc/siC2YbBFcyI3dJUAIgUg43jLsJ270xV3cgrKMs2iZeAOYvZiGjBLjuI0KoUVX7YtPN9+9aCIOjB/wETyDOFM5tT7wAAAABJRU5ErkJggg==" />
+                            </defs>
+                        </svg>
+                            <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="바코드 아이콘 from Vectorslab -
+                            Flaticon"></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div id="insert_card">
+                    <div id="insert_card_moving"></div>
+                    <div class="card_insert">
+                        <div class="insert_card_Text">카드를 넣어주세요</div>
+                        <div id="insert_card_block"></div>
+
+                    </div>
+                    <div class="card_slide">
+                        <div class="insert_card_Text">카드를 긁어주세요</div>
+                        <div id="use_card_block"></div>
+
+                    </div>
+
+                    <div id="receipt">
+                        <div id="receipt_exit">
+                            <div id="receipt_img"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="right_box">
+        <button class="login" type="button" onclick="location.href='#';">로그아웃</button>
+        <div class="misson_level" id="level_1">
+            <h1>난이도: 하</h1>
+            <ul>
+                <li>미션 음료 1잔을 주문해보세요.</li>
+            </ul>
+            <div>
+                < 주문해야 할 음료 리스트>
+            </div>
+            <div class="target"></div>
+        </div>
+        <div class="misson_level" id="level_2">
+            <h1>난이도: 중</h1>
+            <ul>
+                <li>결제시 먹고가기로 주문해주세요.</li>
+                <li>미션 음료 2잔을 주문해보세요.</li>
+            </ul>
+            <div>
+                < 주문해야 할 음료 리스트>
+            </div>
+            <div class="target"></div>
+        </div>
+        <div class="misson_level" id="level_3">
+            <h1>난이도: 상</h1>
+            <ul>
+                <li>결제시 먹고가기로 주문해주세요.</li>
+                <li>결제시 쿠폰을 사용해주세요.</li>
+                <li>미션 음료 3잔을 주문해보세요.</li>
+            </ul>
+            <div>
+                < 주문해야 할 음료 리스트>
+            </div>
+            <div class="target"></div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="{% static '/js/kiosk/common.js' %}"></script>
+<script type="module" src="{% static '/js/kiosk/order_mission.js' %}"></script>
+</body>
+
+</html>
